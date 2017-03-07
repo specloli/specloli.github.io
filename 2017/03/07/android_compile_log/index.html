@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android," />
 
 
 
@@ -87,12 +87,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Brave New World">
-<meta property="og:url" content="http://specloli.github.io/index.html">
+<meta name="description" content="编译AOSP源码参考android open source project 文档 https://source.android.com/
+1.环境搭建建议使用官方推荐的ubuntu 16.04。其他linux发行版也没啥大的问题，但是需要自己解决下依赖的问题。具体安装方法自行google。我的screenfetch如下：123456789101112131415161718">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译android源码">
+<meta property="og:url" content="http://specloli.github.io/2017/03/07/android_compile_log/index.html">
 <meta property="og:site_name" content="Brave New World">
+<meta property="og:description" content="编译AOSP源码参考android open source project 文档 https://source.android.com/
+1.环境搭建建议使用官方推荐的ubuntu 16.04。其他linux发行版也没啥大的问题，但是需要自己解决下依赖的问题。具体安装方法自行google。我的screenfetch如下：123456789101112131415161718">
+<meta property="og:updated_time" content="2017-03-07T14:02:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brave New World">
+<meta name="twitter:title" content="编译android源码">
+<meta name="twitter:description" content="编译AOSP源码参考android open source project 文档 https://source.android.com/
+1.环境搭建建议使用官方推荐的ubuntu 16.04。其他linux发行版也没啥大的问题，但是需要自己解决下依赖的问题。具体安装方法自行google。我的screenfetch如下：123456789101112131415161718">
 
 
 
@@ -120,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://specloli.github.io/"/>
+  <link rel="canonical" href="http://specloli.github.io/2017/03/07/android_compile_log/"/>
 
 
 
 
 
-  <title> Brave New World </title>
+  <title> 编译android源码 | Brave New World </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -151,9 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,9 +241,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -271,10 +276,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/07/android_compile_log/" itemprop="url">
-                  编译android源码
-                </a>
+                编译android源码
               
             
           </h1>
@@ -325,9 +327,7 @@
       
 
       
-        
-          
-            <h1 id="编译AOSP源码"><a href="#编译AOSP源码" class="headerlink" title="编译AOSP源码"></a>编译AOSP源码</h1><p>参考android open source project 文档 <a href="https://source.android.com/" target="_blank" rel="external">https://source.android.com/</a></p>
+        <h1 id="编译AOSP源码"><a href="#编译AOSP源码" class="headerlink" title="编译AOSP源码"></a>编译AOSP源码</h1><p>参考android open source project 文档 <a href="https://source.android.com/" target="_blank" rel="external">https://source.android.com/</a></p>
 <h2 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h2><p>建议使用官方推荐的ubuntu 16.04。其他linux发行版也没啥大的问题，但是需要自己解决下依赖的问题。具体安装方法自行google。我的screenfetch如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">                         ./+o+-       eng@g750</div><div class="line">                 yyyyy- -yyyyyy+      OS: Ubuntu 16.04 xenial</div><div class="line">              ://+//////-yyyyyyo      Kernel: x86_64 Linux 4.4.0-64-generic</div><div class="line">          .++ .:/++++++/-.+sss/`      Uptime: 3h 10m</div><div class="line">        .:++o:  /++++++++/:--:/-      Packages: 2065</div><div class="line">       o:+o+:++.`..```.-/oo+++++/     Shell: bash 4.3.46</div><div class="line">      .:+o:+o/.          `+sssoo+/    Resolution: 1920x1080</div><div class="line"> .++/+:+oo+o:`             /sssooo.   DE: Unity 7.4.0</div><div class="line">/+++//+:`oo+o               /::--:.   WM: Compiz</div><div class="line">\+/+o+++`o++o               ++////.   WM Theme: Flatabulous</div><div class="line"> .++.o+++oo+:`             /dddhhh.   GTK Theme: Flatabulous [GTK2/3]</div><div class="line">      .+.o+oo:.          `oddhhhh+    Icon Theme: Papirus-Dark</div><div class="line">       \+.++o+o``-````.:ohdhhhhh+     Font: Ubuntu 11</div><div class="line">        `:o+++ `ohhhhhhhhyo++os:      CPU: Intel Core i7-4700HQ CPU @ 3.4GHz</div><div class="line">          .o:`.syhhhhhhh/.oo++o`      GPU: GeForce GTX 860M</div><div class="line">              /osyyyyyyo++ooo+++/     RAM: 2601MiB / 11898MiB</div><div class="line">                  ````` +oo+++o\:    </div><div class="line">                         `oo++.</div></pre></td></tr></table></figure></p>
 <ol>
 <li><p>解决依赖</p>
@@ -370,163 +370,66 @@
 <p>添加完成后，使其生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bashrc</div></pre></td></tr></table></figure></p>
 <p>编译完成后刷机文件在你的输出路径下的  /target/product/你的版本 下，连接手机<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">adb reboot bootloader //进入bootloader</div><div class="line">fastboot flash boot boot.img</div><div class="line">fastboot flash system system.img</div><div class="line">fastboot flash userdata userdata.img</div><div class="line">fastboot flash cache cache.img</div><div class="line">fastboot reboot</div></pre></td></tr></table></figure></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://specloli.github.io/2017/02/21/hello-world/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="benjamin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Brave New World">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Brave New World" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/21/hello-world/" itemprop="url">
-                  This is my blog.
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T00:14:25+08:00">
-                2017-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/android/" rel="tag"># android</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <p>Welcome to benjamin’s blog</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/*</span></div><div class="line">    wake up, Neo...</div><div class="line">    the matrix has you</div><div class="line">    follow the white rabbit.</div><div class="line"></div><div class="line">    knock, knock, Neo.</div><div class="line"></div><div class="line">                 (`.         ,-,</div><div class="line">                 ` `.    ,;' /</div><div class="line">                  `.  ,'/ .'</div><div class="line">                   `. X /.'</div><div class="line">         .-;--''--.._` ` (</div><div class="line">       .'            /   `</div><div class="line">      ,           ` '   Q '</div><div class="line">      ,         ,   `._    \</div><div class="line">    ,.|         '     `-.;_'</div><div class="line">    :  . `  ;    `  ` --,.._;</div><div class="line">    ' `    ,   )   .'</div><div class="line">       `._ ,  '   /_</div><div class="line">          ; ,''-,;' ``-</div><div class="line">           ``-..__``--`</div><div class="line"></div><div class="line">**/</div></pre></td></tr></table></figure>
-<h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><p>一直想开个blog。奈何在自建服务器与第三方之间徘徊，最后选择了git-pages的方案，大方简洁而且容易维护。其实这个blog在2016年就搭建完成，种种原因荒芜了一年。（ps,就是懒）</p>
-<p>2017年，希望自己能勇敢坚持下去，跟着心中那只不安的兔子。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/21/hello-world/" rel="next" title="This is my blog.">
+                <i class="fa fa-chevron-left"></i> This is my blog.
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -534,6 +437,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -553,8 +460,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpeg"
@@ -605,6 +521,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编译AOSP源码"><span class="nav-number">1.</span> <span class="nav-text">编译AOSP源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-环境搭建"><span class="nav-number">1.1.</span> <span class="nav-text">1.环境搭建</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -717,6 +649,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
